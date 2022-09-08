@@ -1,5 +1,7 @@
 const grid = document.querySelector('.grid');
 
+let color = 'black';
+
 function createGrid(size) {
     for (let i = 0; i < size; i++) {
         const line = document.createElement('div');
@@ -17,7 +19,7 @@ function createGrid(size) {
     const nodes = document.querySelectorAll('.node');
     nodes.forEach((node) => {
         node.addEventListener('mousemove', () => {
-            node.style.background = 'black';    
+            node.style.background = color;    
         });
     });
 }
@@ -28,8 +30,8 @@ function resetGrid() {
 
 createGrid(16);
 
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
+const buttonSize = document.querySelector('button.size');
+buttonSize.addEventListener('click', () => {
     let size = prompt("Please enter size of grid: ");
     if (size > 64 || size < 1) {
         while (size > 64 || size < 1) {
@@ -38,4 +40,9 @@ button.addEventListener('click', () => {
     }
     resetGrid();
     createGrid(size);
+});
+
+const buttonColor = document.querySelector('button.color');
+buttonColor.addEventListener('click', () => {
+    color = prompt("Please enter color: ");
 });

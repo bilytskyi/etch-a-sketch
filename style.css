@@ -23,3 +23,8 @@ body {
 button {
     margin: 20px;
 }
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}

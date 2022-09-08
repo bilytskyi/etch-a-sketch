@@ -3,6 +3,7 @@ body {
     margin: 0;
     display: flex;
     align-items: center ;
+    background-color: azure;
 }
 
 .grid {
@@ -27,4 +28,10 @@ button {
 .menu {
     display: flex;
     flex-direction: column;
+    margin: 46px;
+}
+
+.info {
+    margin-left: 154px;
+    font-size: 42px;
 }

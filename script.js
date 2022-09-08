@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 
 let color = 'black';
+let size = 16;
 
 function createGrid(size) {
     for (let i = 0; i < size; i++) {
@@ -28,11 +29,11 @@ function resetGrid() {
     grid.innerHTML = '';
 }
 
-createGrid(16);
+createGrid(size);
 
 const buttonSize = document.querySelector('button.size');
 buttonSize.addEventListener('click', () => {
-    let size = prompt("Please enter size of grid: ");
+    size = prompt("Please enter size of grid: ");
     if (size > 64 || size < 1) {
         while (size > 64 || size < 1) {
             size = prompt("Please enter size of grid (MORE THAN 1 AND LESS THAN 65): ");
@@ -45,4 +46,10 @@ buttonSize.addEventListener('click', () => {
 const buttonColor = document.querySelector('button.color');
 buttonColor.addEventListener('click', () => {
     color = prompt("Please enter color: ");
+});
+
+const buttonClear = document.querySelector('button.clear');
+buttonClear.addEventListener('click', () => {
+    resetGrid();
+    createGrid(size);
 });

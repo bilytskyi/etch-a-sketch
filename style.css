@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+}
+
+.node {
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    margin: 5px;
+}
